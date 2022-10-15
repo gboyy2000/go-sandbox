@@ -4,7 +4,7 @@ import "fmt"
 
 // Create the function fuelGauge() here
 func fuelGauge(fuel int) {
-  fmt.Println("The amount of fuel left is", fuel)
+  fmt.Println("The amount of fuel left will be", fuel, "\n")
 }
 
 // Create the function calculateFuel() here
@@ -25,12 +25,12 @@ func calculateFuel(planet string) int {
 
 // Create the function greetPlanet() here
 func greetPlanet(planet string) {
-  fmt.Print("We are going to ", planet,".\n")
+  fmt.Print("\nWe are going to ", planet,"!\n")
 }
 
 // Create the function cantFly() here
 func cantFly() {
-  fmt.Println("We do not have the available fuel to fly there.")
+  fmt.Println("\nWe do not have the available fuel to fly there.")
 }
 
 // Create the function flyToPlanet() here
@@ -54,8 +54,12 @@ func main() {
 
   // Create `planetChoice` and `fuel`
   var fuel int
-  fuel = 800000
-  planetChoice := "Mars"
+  var planetChoice string
+
+  fmt.Print("Please enter your destination: ")
+  fmt.Scan(&planetChoice)
+  fmt.Print("Enter the fuel quantity: ")
+  fmt.Scan(&fuel)
 
   fuel = flyToPlanet(planetChoice, fuel)
   fuelGauge(fuel)
